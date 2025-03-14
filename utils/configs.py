@@ -56,6 +56,7 @@ parser.add_argument('--aggregation', type=str, default='deg', help='aggregation 
 parser.add_argument('--nhid', type=int, default=16, help='dim of hidden embedding')
 parser.add_argument('--nout', type=int, default=16, help='dim of output embedding')
 parser.add_argument('--roland_update', type=str, default="gru", help="ROLAND update strategy.")
+parser.add_argument('--hop', type=int, help='Number of hops', default=-1)
 
 args = parser.parse_args()
 
@@ -201,6 +202,7 @@ def get_args():
     parser.add_argument('--tolerance', type=float, help='Early stopper tolerance', default=1e-6)
     parser.add_argument('--patience', type=float, help='Early stopper patience', default=5)
     parser.add_argument('--num_run', type=int, help='Number of iteration runs', default=1)
+    parser.add_argument('--hop', type=int, help='Number of hops', default=-1)
 
     try:
         args = parser.parse_args()
